@@ -287,7 +287,113 @@
 
   startTerminal();
 </script>
+/* ===============================
+   MOBILE RESPONSIVE FIXES
+   =============================== */
+
+@media (max-width: 880px) {
+
+  /* Hero becomes single column */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Terminal width fix */
+  .visual {
+    min-height: 240px;
+    padding: 16px;
+  }
+
+  .code-window {
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 10px;
+    word-break: break-word;
+  }
+
+  /* Scan bar */
+  .scan-bar {
+    height: 6px;
+  }
+
+  /* Cards stack */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Projects stack */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Skills: 2 per row */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Reduce global padding */
+  .wrap {
+    padding: 16px;
+    margin: 12px auto;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .title-sub,
+  .lead {
+    font-size: 14px;
+  }
+
+  section {
+    margin-top: 22px;
+  }
+}
+
+/* Extra Small Phones < 420px */
+@media (max-width: 420px) {
+
+  .code-window {
+    font-size: 10px;
+  }
+
+  nav a {
+    margin-left: 6px;
+    font-size: 13px;
+  }
+
+  .project h4,
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .skill {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .skill small {
+    font-size: 10px;
+  }
+
+}
 
 
 </body>
 </html>
+
