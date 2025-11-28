@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aparna — IoT & Cybersecurity Portfolio</title>
+  <meta name="description" content="Aparna — IoT, Cybersecurity & Blockchain student portfolio" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1: #07060a;
+      --bg-2: #0b0a10;
+      --panel: rgba(255,255,255,0.03);
+      --accent: #A259FF;
+      --accent-2: rgba(162,89,255,0.12);
+      --term-accent: #00FF88;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', system-ui;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(162,89,255,0.04), transparent), 
+                  linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color:#e6e6ef;
+      overflow-x:hidden;
+    }
+    .wrap{max-width:1100px;margin:28px auto;padding:28px}
+
+    /* header */
+    header{display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:rgba(162,89,255,0.1);display:flex;align-items:center;justify-content:center}
+    .logo .p{font-family:var(--mono);font-weight:700;color:var(--accent)}
+    nav a{margin-left:18px;color:#dcdcff;text-decoration:none;font-weight:600}
+    nav a.cta{background:var(--accent);padding:8px 12px;border-radius:8px;color:#0b0710}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 400px;gap:28px;margin-top:18px}
+    .intro{padding:26px;background:var(--panel);border-radius:14px}
+    h1{margin:0 0 8px}
+    .title-sub{margin-bottom:12px;color:#c7c7d8}
+    p.lead{margin-bottom:18px}
+
+    /* terminal */
+    .visual{position:relative;padding:18px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(162,89,255,0.15)}
+    .code-window{font-family:var(--mono);font-size:13px;color:var(--term-accent);white-space:pre-wrap}
+    .matrix-bg-term{position:absolute;inset:0;opacity:0.1;background-image:linear-gradient(transparent 1px, rgba(0,255,136,0.03) 1px),
+                    linear-gradient(90deg, transparent 1px, rgba(0,255,136,0.03) 1px);background-size:100% 36px, 36px 100%;pointer-events:none}
+    .scan-bar{height:8px;background:rgba(255,255,255,0.05);border-radius:6px;margin-top:12px}
+    .scan-progress{height:100%;width:0%;background:var(--term-accent);transition:width 0.3s linear}
+
+    section{margin-top:40px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);padding:18px;border-radius:12px}
+    .muted{color:#9aa0b3;font-size:13px}
+
+    /* projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{padding:16px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(162,89,255,0.12)}
+    .tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .tag{font-family:var(--mono);font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(162,89,255,0.15)}
+
+    /* skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .skill{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center}
+
+    footer{text-align:center;margin-top:40px;color:#999}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo"><div class="p">AP</div></div>
+        <div>
+          <div style="font-weight:700">Aparna</div>
+          <div style="font-size:12px;color:#9aa0b3">IoT & Cybersecurity Student</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="aparna_resume.pdf" download>Download Resume</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="intro">
+        <h1>Aparna — Secure-by-design thinker</h1>
+        <div class="title-sub">IoT | Cybersecurity | Blockchain</div>
+        <p class="lead">I work on secure embedded systems, vulnerability analysis, IoT protection layers and blockchain-backed integrity.</p>
+        <div style="margin-top:10px;color:#a8aede;font-size:13px">Location: Bangalore, Karnataka • Open to internships</div>
+      </div>
+
+      <aside class="visual glow">
+  <div class="matrix-bg-term"></div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-family:var(--mono);letter-spacing:0.6px;color:var(--accent)">terminal • live</div>
+    <div style="font-size:12px;color:#9aa0b3">IoT · Embedded · Security</div>
+  </div>
+
+  <pre class="code-window" id="codeWin"></pre>
+
+  <div class="scan-bar">
+    <div class="scan-progress" id="scanProgress"></div>
+  </div>
+</aside>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="cards">
+        <div class="card">
+          <h3>About</h3>
+          <p class="muted">I specialize in IoT, cybersecurity, penetration testing and cryptographic systems.</p>
+          <div class="muted" style="margin-top:12px"><b>Education:</b> BE in IoT, Cybersecurity including Blockchain Technology — DSATM</div>
+        </div>
+
+        <div class="card">
+          <h3>Quick Facts</h3>
+          <div class="muted">Focus: IoT Security<br>Languages: Python, C, Java<br>Tools: Scapy, Wireshark, GDB</div>
+        </div>
+
+        <div class="card">
+          <h3>Goals</h3>
+          <p class="muted">I aim to work in cybersecurity as a penetration tester or analyst, specializing in IoT and network security.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION (ADDED HERE) -->
+    <section id="projects">
+      <h2 style="margin-bottom:12px">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project">
+          <h4>Penetration Testing Toolkit</h4>
+          <p class="muted">A toolkit of offensive security scripts for scanning, enumeration, brute-force simulations and vulnerability assessment.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Security</span><span class="tag">Pentesting</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h4>Pen-Goat (OWASP Vulnerability Scanner)</h4>
+          <p class="muted">Node.js-based scanner detecting OWASP issues like XSS, open redirects and missing security headers.</p>
+          <div class="tags">
+            <span class="tag">Node.js</span><span class="tag">OWASP</span><span class="tag">Scanner</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h4>Advanced Encryption Tool</h4>
+          <p class="muted">AES-RSA hybrid encryption system with key generation, secure encryption and decryption pipeline.</p>
+          <div class="tags">
+            <span class="tag">AES</span><span class="tag">RSA</span><span class="tag">Crypto</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h4>Travel UI Design</h4>
+          <p class="muted">Responsive UI for a travel web app made during JB Portals internship.</p>
+          <div class="tags">
+            <span class="tag">Figma</span><span class="tag">UI/UX</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">IoT Security</div>
+        <div class="skill">Network Security</div>
+        <div class="skill">Embedded C</div>
+        <div class="skill">Python</div>
+        <div class="skill">Blockchain</div>
+        <div class="skill">Ethical Hacking</div>
+        <div class="skill">Wireshark</div>
+        <div class="skill">Scapy</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <b>aparnalaxmi777@gmail.com</b></p>
+        <p>Phone: <b>+91 88844 98621</b></p>
+        <p><a href="https://github.com/aparnalaxmi07" target="_blank" style="color:#A259FF">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/aparna-sunku-b9b84b280" target="_blank" style="color:#A259FF">LinkedIn</a></p>
+      </div>
+    </section>
+
+    <footer>© Aparna • Cybersecurity Portfolio</footer>
+
+  </div>
+
+<script>
+  const codeEl = document.getElementById('codeWin');
+  const progressEl = document.getElementById('scanProgress');
+
+  function sleep(ms){ return new Promise(res => setTimeout(res, ms)); }
+
+  // Collect visitor info (battery added)
+  async function getInfo() {
+    const lines = [
+      "[+] Initializing visitor scan...",
+      "[+] Collecting system data...",
+      "[+] Visitor connected",
+      "    Browser: " + navigator.userAgent,
+      "    OS: " + navigator.platform,
+      "    Resolution: " + screen.width + "x" + screen.height,
+      "    Language: " + navigator.language,
+      "    Timezone: " + Intl.DateTimeFormat().resolvedOptions().timeZone
+    ];
+
+    // Battery detection restored
+    try {
+      if (navigator.getBattery) {
+        const b = await navigator.getBattery();
+        lines.push("    Battery: " + Math.round(b.level * 100) + "%");
+      } else {
+        lines.push("    Battery: Not supported");
+      }
+    } catch {
+      lines.push("    Battery: Error reading");
+    }
+
+    return lines;
+  }
+
+  // Typing animation
+  async function type(line){
+    for(let ch of line){
+      codeEl.textContent += ch;
+      await sleep(7); // smooth typing
+    }
+    codeEl.textContent += "\n";
+  }
+
+  // Progress bar animation
+  async function animateBar() {
+    let width = 0;
+    while(width < 100){
+      width += Math.random() * 15 + 5;
+      if(width > 100) width = 100;
+      progressEl.style.width = width + "%";
+      await sleep(200);
+    }
+  }
+
+  // Main terminal animation
+  async function startTerminal(){
+    codeEl.textContent = ""; // Clear
+
+    animateBar(); // run bar at same time
+
+    const lines = await getInfo();
+    for (let line of lines){
+      await type(line);
+      await sleep(120);
+    }
+
+    // Blinking cursor restored
+    const cursor = document.createElement("span");
+    cursor.textContent = "█";
+    cursor.style.color = "#00FF88";
+    cursor.style.animation = "blink 0.7s infinite steps(1)";
+    codeEl.appendChild(cursor);
+  }
+
+  startTerminal();
+</script>
+
+
+</body>
+</html>
